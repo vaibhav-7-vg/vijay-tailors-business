@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>Vijay Tailor's | Men's Specialist</title>
-  <link rel="manifest" href="manifest.json">
+
+<link rel="manifest" href="manifest.json">
+
 <meta name="theme-color" content="#172033">
 
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -25,6 +31,8 @@ body {
   margin: auto;
   padding-bottom: 30px;
 }
+
+/* HEADER */
 
 .header {
   background: #172033;
@@ -43,6 +51,8 @@ body {
   margin: 8px 0 0;
   opacity: 0.85;
 }
+
+/* MAIN BUTTONS */
 
 .buttons {
   display: grid;
@@ -79,6 +89,8 @@ body {
   background: #7c3aed;
 }
 
+/* SECTIONS */
+
 .section {
   background: white;
   margin: 10px 20px;
@@ -91,6 +103,8 @@ body {
   margin-top: 0;
 }
 
+/* SERVICES */
+
 .services {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -99,84 +113,48 @@ body {
 
 .service {
   background: #f1f5f9;
-  padding: 15px;
+  padding: 20px 10px;
   border-radius: 12px;
   text-align: center;
-  line-height: 1.6;
-}
-
-.quantity {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-.quantity button {
-  width: 35px;
-  height: 35px;
-  border: none;
-  border-radius: 50%;
-  background: #172033;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.quantity span {
-  min-width: 25px;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.order-box {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 2px solid #e5e7eb;
-}
-
-.input {
-  width: 100%;
-  padding: 14px;
-  margin: 7px 0 12px;
-  border: 2px solid #e2e8f0;
-  border-radius: 12px;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
-}
-
-textarea.input {
-  min-height: 90px;
-  resize: vertical;
-}
-
-.order-summary {
-  background: #f8fafc;
-  padding: 15px;
-  border-radius: 12px;
-  margin: 15px 0;
   line-height: 1.8;
+  font-size: 16px;
 }
 
-.total {
-  font-size: 20px;
-  font-weight: bold;
-  border-top: 1px solid #ddd;
-  padding-top: 10px;
-  margin-top: 10px;
-}
-
-.place-order {
-  width: 100%;
-  background: #16a34a;
+.service strong {
   font-size: 18px;
-  margin-top: 10px;
 }
+
+/* CONTACT */
 
 .contact {
   line-height: 1.7;
 }
+
+/* INSTALL APP */
+
+.install-box {
+  text-align: center;
+}
+
+.install-box p {
+  line-height: 1.6;
+  color: #555;
+}
+
+.install-button {
+  width: 100%;
+  background: #172033;
+  font-size: 17px;
+  margin-top: 10px;
+}
+
+.install-note {
+  font-size: 13px;
+  color: #777;
+  margin-top: 12px;
+}
+
+/* FOOTER */
 
 .footer {
   text-align: center;
@@ -184,515 +162,395 @@ textarea.input {
   color: #666;
   font-size: 14px;
 }
+
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-  <!-- HEADER -->
-  <div class="header">
-    <h1>🧵 Vijay Tailor's</h1>
-    <p>Men's Specialist</p>
-    <p>Perfect Fit • Quality Stitching • Reliable Service</p>
-  </div>
+
+<!-- HEADER -->
+
+<div class="header">
+
+  <h1>🧵 Vijay Tailor's</h1>
+
+  <p>Men's Specialist</p>
+
+  <p>
+    Perfect Fit • Quality Stitching • Reliable Service
+  </p>
+
+</div>
 
 
-  <!-- MAIN BUTTONS -->
-  <div class="buttons">
+<!-- MAIN BUTTONS -->
 
-    <a class="button call"
-       href="tel:+918381098457">
-       📞 Call Now
-    </a>
+<div class="buttons">
 
-    <a class="button whatsapp"
-       href="https://wa.me/918830234108"
-       target="_blank">
-       💬 WhatsApp
-    </a>
+  <a class="button call"
+     href="tel:+918381098457">
+     📞 Call Now
+  </a>
 
-    <a class="button map"
-       href="https://www.google.com/maps/search/?api=1&query=Vijay+Tailor+Wagholi+Jay+Malhar+Building+Baif+Road+near+Canara+Bank+Wagholi+Pune+Maharashtra+412207"
-       target="_blank">
-       📍 Find Shop
-    </a>
+  <a class="button whatsapp"
+     href="https://wa.me/918830234108"
+     target="_blank">
+     💬 WhatsApp
+  </a>
 
-    <a class="button services-button"
-       href="#services">
-       ✂️ Services
-    </a>
+  <a class="button map"
+     href="https://www.google.com/maps/search/?api=1&query=Vijay+Tailor+Wagholi+Jay+Malhar+Building+Baif+Road+near+Canara+Bank+Wagholi+Pune+Maharashtra+412207"
+     target="_blank">
+     📍 Find Shop
+  </a>
 
-  </div>
+  <a class="button services-button"
+     href="#services">
+     ✂️ Services
+  </a>
 
-
-  <!-- SERVICES -->
-  <div class="section" id="services">
-
-    <h2>Our Services 👔</h2>
-
-    <div class="services">
-
-      <!-- SHIRT -->
-      <div class="service">
-        👔<br>
-        <strong>Shirt Stitching</strong><br>
-        ₹349
-
-        <div class="quantity">
-          <button onclick="changeQty('shirt', -1)">−</button>
-          <span id="shirtQty">0</span>
-          <button onclick="changeQty('shirt', 1)">+</button>
-        </div>
-      </div>
+</div>
 
 
-      <!-- PANT -->
-      <div class="service">
-        👖<br>
-        <strong>Pant Stitching</strong><br>
-        ₹349
+<!-- SERVICES -->
 
-        <div class="quantity">
-          <button onclick="changeQty('pant', -1)">−</button>
-          <span id="pantQty">0</span>
-          <button onclick="changeQty('pant', 1)">+</button>
-        </div>
-      </div>
+<div class="section" id="services">
+
+  <h2>Our Services 👔</h2>
+
+  <div class="services">
 
 
-      <!-- SCHOOL -->
-      <div class="service">
-        🏫<br>
-        <strong>School Uniform</strong><br>
-        ₹699
+    <!-- SHIRT -->
 
-        <div class="quantity">
-          <button onclick="changeQty('school', -1)">−</button>
-          <span id="schoolQty">0</span>
-          <button onclick="changeQty('school', 1)">+</button>
-        </div>
-      </div>
+    <div class="service">
 
+      👔<br>
 
-      <!-- OFFICE -->
-      <div class="service">
-        🏢<br>
-        <strong>Office Uniform</strong><br>
-        ₹699
+      <strong>Shirt Stitching</strong>
 
-        <div class="quantity">
-          <button onclick="changeQty('office', -1)">−</button>
-          <span id="officeQty">0</span>
-          <button onclick="changeQty('office', 1)">+</button>
-        </div>
-      </div>
+      <br>
 
-
-      <!-- KURTA -->
-      <div class="service">
-        🥻<br>
-        <strong>Kurta Pajama</strong><br>
-        ₹699
-
-        <div class="quantity">
-          <button onclick="changeQty('kurta', -1)">−</button>
-          <span id="kurtaQty">0</span>
-          <button onclick="changeQty('kurta', 1)">+</button>
-        </div>
-      </div>
-
-
-      <!-- ALTERATION -->
-      <div class="service">
-        ✂️<br>
-        <strong>Alteration</strong><br>
-        Price on enquiry
-
-        <div class="quantity">
-          <button onclick="changeQty('alteration', -1)">−</button>
-          <span id="alterationQty">0</span>
-          <button onclick="changeQty('alteration', 1)">+</button>
-        </div>
-      </div>
+      ₹349
 
     </div>
 
 
-    <!-- CUSTOMER DETAILS -->
-    <div class="order-box">
+    <!-- PANT -->
 
-      <h2>🛒 Place Your Order</h2>
+    <div class="service">
 
-      <label><strong>👤 Customer Name</strong></label>
-      <input
-        type="text"
-        id="customerName"
-        class="input"
-        placeholder="Enter your name"
-      >
+      👖<br>
 
-      <label><strong>📱 Mobile Number</strong></label>
-      <input
-        type="tel"
-        id="customerMobile"
-        class="input"
-        placeholder="Enter your mobile number"
-      >
+      <strong>Pant Stitching</strong>
 
-      <label><strong>📝 Special Instructions</strong></label>
-      <textarea
-        id="customerNote"
-        class="input"
-        placeholder="Example: Slim fit, blue shirt, etc."
-      ></textarea>
+      <br>
 
-
-      <!-- ORDER SUMMARY -->
-      <div class="order-summary">
-
-        <strong>🧾 Order Summary</strong>
-
-        <div id="summary">
-          No items selected yet.
-        </div>
-
-        <div class="total">
-          Total: ₹<span id="totalAmount">0</span>
-        </div>
-
-      </div>
-
-
-      <!-- PLACE ORDER -->
-      <button
-        class="button place-order"
-        onclick="placeOrder()">
-        🟢 PLACE ORDER ON WHATSAPP
-      </button>
+      ₹349
 
     </div>
 
-  </div>
+
+    <!-- SCHOOL -->
+
+    <div class="service">
+
+      🏫<br>
+
+      <strong>School Uniform</strong>
+
+      <br>
+
+      ₹699
+
+    </div>
 
 
-  <!-- WHY CHOOSE US -->
-  <div class="section">
+    <!-- OFFICE -->
 
-    <h2>Why Choose Us? ⭐</h2>
+    <div class="service">
 
-    <p>✓ Quality stitching</p>
-    <p>✓ Proper fitting</p>
-    <p>✓ Experienced tailor</p>
-    <p>✓ On-time delivery</p>
+      🏢<br>
 
-  </div>
+      <strong>Office Uniform</strong>
 
+      <br>
 
-  <!-- SHOP ADDRESS -->
-  <div class="section contact">
+      ₹699
 
-    <h2>📍 Visit Our Shop</h2>
-
-    <strong>Vijay Tailor's – Men's Specialist</strong>
-
-    <p>
-      Jay Malhar Building, Baif Road,<br>
-      Near Canara Bank, Wagholi,<br>
-      Pune, Maharashtra 412207
-    </p>
-
-    <p>
-      👔 Men's Tailoring & Uniform Specialist
-    </p>
-
-    <a class="button map"
-       href="https://www.google.com/maps/search/?api=1&query=Vijay+Tailor+Wagholi+Jay+Malhar+Building+Baif+Road+near+Canara+Bank+Wagholi+Pune+Maharashtra+412207"
-       target="_blank">
-       🗺️ Get Directions
-    </a>
-
-  </div>
+    </div>
 
 
-  <!-- WHATSAPP ENQUIRY -->
-  <div class="section">
+    <!-- KURTA -->
 
-    <h2>💬 Quick Enquiry</h2>
+    <div class="service">
 
-    <p>
-      Want to ask about stitching, uniform or alteration?
-    </p>
+      🥻<br>
 
-    <a class="button whatsapp"
-       href="https://wa.me/918830234108?text=Hello%20Vijay%20Tailor's,%20I%20want%20to%20enquire%20about%20stitching."
-       target="_blank">
-       Message Us on WhatsApp
-    </a>
+      <strong>Kurta Pajama</strong>
 
-  </div>
+      <br>
+
+      ₹699
+
+    </div>
 
 
-  <!-- FOOTER -->
-  <div class="footer">
-    © 2026 Vijay Tailor's<br>
-    Men's Specialist
+    <!-- ALTERATION -->
+
+    <div class="service">
+
+      ✂️<br>
+
+      <strong>Alteration</strong>
+
+    </div>
+
+
   </div>
 
 </div>
 
 
+<!-- WHY CHOOSE US -->
+
+<div class="section">
+
+  <h2>Why Choose Us? ⭐</h2>
+
+  <p>✓ Quality stitching</p>
+
+  <p>✓ Proper fitting</p>
+
+  <p>✓ Experienced tailor</p>
+
+  <p>✓ On-time delivery</p>
+
+</div>
+
+
+<!-- SHOP ADDRESS -->
+
+<div class="section contact">
+
+  <h2>📍 Visit Our Shop</h2>
+
+  <strong>
+    Vijay Tailor's – Men's Specialist
+  </strong>
+
+  <p>
+
+    Jay Malhar Building, Baif Road,<br>
+
+    Near Canara Bank, Wagholi,<br>
+
+    Pune, Maharashtra 412207
+
+  </p>
+
+  <p>
+    👔 Men's Tailoring & Uniform Specialist
+  </p>
+
+
+  <a class="button map"
+     href="https://www.google.com/maps/search/?api=1&query=Vijay+Tailor+Wagholi+Jay+Malhar+Building+Baif+Road+near+Canara+Bank+Wagholi+Pune+Maharashtra+412207"
+     target="_blank">
+
+     🗺️ Get Directions
+
+  </a>
+
+</div>
+
+
+<!-- WHATSAPP ENQUIRY -->
+
+<div class="section">
+
+  <h2>💬 Quick Enquiry</h2>
+
+  <p>
+    Want to ask about stitching, uniform or alteration?
+  </p>
+
+  <a class="button whatsapp"
+     href="https://wa.me/918830234108?text=Hello%20Vijay%20Tailor's,%20I%20want%20to%20enquire%20about%20stitching."
+     target="_blank">
+
+     Message Us on WhatsApp
+
+  </a>
+
+</div>
+
+
+<!-- INSTALL APP -->
+
+<div class="section install-box" id="installApp">
+
+  <h2>📱 Install Our App</h2>
+
+  <p>
+    Get quick access to Vijay Tailor's
+    directly from your phone.
+  </p>
+
+  <button
+    id="installButton"
+    class="button install-button"
+    style="display:none;">
+
+    📲 Install Vijay Tailor's App
+
+  </button>
+
+  <p class="install-note" id="installNote">
+
+    Install the app for quick access
+    to our services and shop details.
+
+  </p>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+  © 2026 Vijay Tailor's<br>
+
+  Men's Specialist
+
+</div>
+
+
+</div>
+
+
+<!-- PWA INSTALL SCRIPT -->
+
 <script>
 
-let quantities = {
-  shirt: 0,
-  pant: 0,
-  school: 0,
-  office: 0,
-  kurta: 0,
-  alteration: 0
-};
+let deferredPrompt;
+
+const installButton =
+  document.getElementById("installButton");
+
+const installNote =
+  document.getElementById("installNote");
 
 
-let prices = {
-  shirt: 349,
-  pant: 349,
-  school: 699,
-  office: 699,
-  kurta: 699,
-  alteration: 0
-};
+window.addEventListener(
+  "beforeinstallprompt",
+  (event) => {
 
+    event.preventDefault();
 
-let names = {
-  shirt: "Shirt Stitching",
-  pant: "Pant Stitching",
-  school: "School Uniform",
-  office: "Office Uniform",
-  kurta: "Kurta Pajama",
-  alteration: "Alteration"
-};
+    deferredPrompt = event;
 
+    installButton.style.display = "block";
 
-function changeQty(item, amount) {
+    installNote.innerText =
+      "Tap the button below to install our app.";
 
-  quantities[item] += amount;
-
-  if (quantities[item] < 0) {
-    quantities[item] = 0;
   }
-
-  document.getElementById(item + "Qty").innerText =
-    quantities[item];
-
-  updateSummary();
-}
+);
 
 
-function updateSummary() {
+installButton.addEventListener(
+  "click",
+  async () => {
 
-  let summary = "";
-  let total = 0;
-  let hasItems = false;
+    if (!deferredPrompt) {
 
-  for (let item in quantities) {
+      alert(
+        "If the install option does not appear, tap the Chrome menu ⋮ and choose Add to Home screen."
+      );
 
-    if (quantities[item] > 0) {
-
-      hasItems = true;
-
-      let quantity = quantities[item];
-      let price = prices[item];
-
-      if (item === "alteration") {
-
-        summary +=
-          "<div>✂️ " +
-          names[item] +
-          " × " +
-          quantity +
-          " — Price on enquiry</div>";
-
-      } else {
-
-        let itemTotal = quantity * price;
-
-        total += itemTotal;
-
-        summary +=
-          "<div>" +
-          names[item] +
-          " × " +
-          quantity +
-          " = ₹" +
-          itemTotal +
-          "</div>";
-      }
+      return;
     }
-  }
 
+    deferredPrompt.prompt();
 
-  if (!hasItems) {
-    summary = "No items selected yet.";
-  }
+    const { outcome } =
+      await deferredPrompt.userChoice;
 
-  document.getElementById("summary").innerHTML = summary;
+    if (outcome === "accepted") {
 
-  document.getElementById("totalAmount").innerText = total;
-}
+      installButton.style.display = "none";
 
+      installNote.innerText =
+        "✅ Vijay Tailor's App installed successfully!";
 
-function placeOrder() {
-
-  let customerName =
-    document.getElementById("customerName").value.trim();
-
-  let customerMobile =
-    document.getElementById("customerMobile").value.trim();
-
-  let customerNote =
-    document.getElementById("customerNote").value.trim();
-
-
-  if (customerName === "") {
-
-    alert("Please enter your name.");
-
-    document.getElementById("customerName").focus();
-
-    return;
-  }
-
-
-  if (customerMobile === "") {
-
-    alert("Please enter your mobile number.");
-
-    document.getElementById("customerMobile").focus();
-
-    return;
-  }
-
-
-  let hasItems = false;
-
-  for (let item in quantities) {
-
-    if (quantities[item] > 0) {
-      hasItems = true;
-      break;
     }
+
+    deferredPrompt = null;
+
   }
+);
 
 
-  if (!hasItems) {
+window.addEventListener(
+  "appinstalled",
+  () => {
 
-    alert("Please select at least one service.");
+    installButton.style.display = "none";
 
-    return;
+    installNote.innerText =
+      "✅ Vijay Tailor's App is installed!";
+
   }
-
-
-  let message =
-    "🧵 *NEW ORDER - Vijay Tailor's*%0A%0A";
-
-
-  message +=
-    "👤 *Customer Name:* " +
-    encodeURIComponent(customerName) +
-    "%0A";
-
-
-  message +=
-    "📱 *Mobile:* " +
-    encodeURIComponent(customerMobile) +
-    "%0A%0A";
-
-
-  message +=
-    "🛒 *ORDER DETAILS*%0A";
-
-
-  let total = 0;
-
-
-  for (let item in quantities) {
-
-    if (quantities[item] > 0) {
-
-      let quantity = quantities[item];
-      let price = prices[item];
-
-
-      if (item === "alteration") {
-
-        message +=
-          "✂️ " +
-          encodeURIComponent(names[item]) +
-          " × " +
-          quantity +
-          " - Price on enquiry%0A";
-
-      } else {
-
-        let itemTotal = quantity * price;
-
-        total += itemTotal;
-
-        message +=
-          encodeURIComponent(names[item]) +
-          " × " +
-          quantity +
-          " = ₹" +
-          itemTotal +
-          "%0A";
-      }
-    }
-  }
-
-
-  message +=
-    "%0A💰 *TOTAL: ₹" +
-    total +
-    "*%0A";
-
-
-  if (customerNote !== "") {
-
-    message +=
-      "%0A📝 *Special Instructions:*%0A" +
-      encodeURIComponent(customerNote);
-  }
-
-
-  let whatsappNumber = "918830234108";
-
-
-  let whatsappURL =
-    "https://wa.me/" +
-    whatsappNumber +
-    "?text=" +
-    message;
-
-
-  window.open(whatsappURL, "_blank");
-}
+);
 
 </script>
 
+
+<!-- SERVICE WORKER -->
+
 <script>
+
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function () {
-    navigator.serviceWorker.register("./service-worker.js")
+
+  window.addEventListener(
+    "load",
+    function () {
+
+      navigator.serviceWorker.register(
+        "./service-worker.js"
+      )
+
       .then(function () {
-        console.log("Vijay Tailor's app is ready!");
+
+        console.log(
+          "Vijay Tailor's app is ready!"
+        );
+
       })
+
       .catch(function (error) {
-        console.log("Service Worker error:", error);
+
+        console.log(
+          "Service Worker error:",
+          error
+        );
+
       });
-  });
+
+    }
+  );
+
 }
+
 </script>
+
+
 </body>
-      </html>
+
+</html>
