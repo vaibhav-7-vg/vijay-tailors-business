@@ -101,6 +101,31 @@ body {
   line-height: 1.6;
 }
 
+.quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.quantity button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background: #172033;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.quantity span {
+  min-width: 25px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
 .contact {
   line-height: 1.7;
 }
@@ -167,32 +192,79 @@ body {
 
       <div class="service">
         👔<br>
-        <strong>Shirt Stitching</strong>
+        <strong>Shirt Stitching</strong><br>
+        ₹349
+
+        <div class="quantity">
+          <button onclick="changeQty('shirt', -1)">−</button>
+          <span id="shirtQty">0</span>
+          <button onclick="changeQty('shirt', 1)">+</button>
+        </div>
       </div>
+
 
       <div class="service">
         👖<br>
-        <strong>Pant Stitching</strong>
+        <strong>Pant Stitching</strong><br>
+        ₹349
+
+        <div class="quantity">
+          <button onclick="changeQty('pant', -1)">−</button>
+          <span id="pantQty">0</span>
+          <button onclick="changeQty('pant', 1)">+</button>
+        </div>
       </div>
+
 
       <div class="service">
         🏫<br>
-        <strong>School Uniforms</strong>
+        <strong>School Uniform</strong><br>
+        ₹699
+
+        <div class="quantity">
+          <button onclick="changeQty('school', -1)">−</button>
+          <span id="schoolQty">0</span>
+          <button onclick="changeQty('school', 1)">+</button>
+        </div>
       </div>
+
 
       <div class="service">
         🏢<br>
-        <strong>Office Uniforms</strong>
+        <strong>Office Uniform</strong><br>
+        ₹699
+
+        <div class="quantity">
+          <button onclick="changeQty('office', -1)">−</button>
+          <span id="officeQty">0</span>
+          <button onclick="changeQty('office', 1)">+</button>
+        </div>
       </div>
+
 
       <div class="service">
         🥻<br>
-        <strong>Kurta Pajama</strong>
+        <strong>Kurta Pajama</strong><br>
+        ₹699
+
+        <div class="quantity">
+          <button onclick="changeQty('kurta', -1)">−</button>
+          <span id="kurtaQty">0</span>
+          <button onclick="changeQty('kurta', 1)">+</button>
+        </div>
       </div>
+
 
       <div class="service">
         ✂️<br>
-        <strong>Alterations</strong>
+        <strong>Alteration</strong><br>
+        Price on enquiry
+
+        <div class="quantity">
+          <button onclick="changeQty('alteration', -1)">−</button>
+          <span id="alterationQty">0</span>
+          <button onclick="changeQty('alteration', 1)">+</button>
+        </div>
       </div>
 
     </div>
@@ -266,6 +338,32 @@ body {
   </div>
 
 </div>
+
+
+<!-- QUANTITY JAVASCRIPT -->
+<script>
+
+let quantities = {
+  shirt: 0,
+  pant: 0,
+  school: 0,
+  office: 0,
+  kurta: 0,
+  alteration: 0
+};
+
+function changeQty(item, amount) {
+
+  quantities[item] += amount;
+
+  if (quantities[item] < 0) {
+    quantities[item] = 0;
+  }
+
+  document.getElementById(item + "Qty").innerText = quantities[item];
+}
+
+</script>
 
 </body>
 </html>
