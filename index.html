@@ -57,6 +57,8 @@ body {
   border-radius: 15px;
   text-align: center;
   font-weight: bold;
+  border: none;
+  cursor: pointer;
 }
 
 .call {
@@ -126,6 +128,50 @@ body {
   font-size: 18px;
 }
 
+.order-box {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #e5e7eb;
+}
+
+.input {
+  width: 100%;
+  padding: 14px;
+  margin: 7px 0 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+textarea.input {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.order-summary {
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 12px;
+  margin: 15px 0;
+  line-height: 1.8;
+}
+
+.total {
+  font-size: 20px;
+  font-weight: bold;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.place-order {
+  width: 100%;
+  background: #16a34a;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
 .contact {
   line-height: 1.7;
 }
@@ -154,27 +200,23 @@ body {
   <!-- MAIN BUTTONS -->
   <div class="buttons">
 
-    <!-- CALL -->
     <a class="button call"
        href="tel:+918381098457">
        📞 Call Now
     </a>
 
-    <!-- WHATSAPP -->
     <a class="button whatsapp"
        href="https://wa.me/918830234108"
        target="_blank">
        💬 WhatsApp
     </a>
 
-    <!-- GOOGLE MAPS -->
     <a class="button map"
        href="https://www.google.com/maps/search/?api=1&query=Vijay+Tailor+Wagholi+Jay+Malhar+Building+Baif+Road+near+Canara+Bank+Wagholi+Pune+Maharashtra+412207"
        target="_blank">
        📍 Find Shop
     </a>
 
-    <!-- SERVICES -->
     <a class="button services-button"
        href="#services">
        ✂️ Services
@@ -190,6 +232,7 @@ body {
 
     <div class="services">
 
+      <!-- SHIRT -->
       <div class="service">
         👔<br>
         <strong>Shirt Stitching</strong><br>
@@ -203,6 +246,7 @@ body {
       </div>
 
 
+      <!-- PANT -->
       <div class="service">
         👖<br>
         <strong>Pant Stitching</strong><br>
@@ -216,6 +260,7 @@ body {
       </div>
 
 
+      <!-- SCHOOL -->
       <div class="service">
         🏫<br>
         <strong>School Uniform</strong><br>
@@ -229,6 +274,7 @@ body {
       </div>
 
 
+      <!-- OFFICE -->
       <div class="service">
         🏢<br>
         <strong>Office Uniform</strong><br>
@@ -242,6 +288,7 @@ body {
       </div>
 
 
+      <!-- KURTA -->
       <div class="service">
         🥻<br>
         <strong>Kurta Pajama</strong><br>
@@ -255,6 +302,7 @@ body {
       </div>
 
 
+      <!-- ALTERATION -->
       <div class="service">
         ✂️<br>
         <strong>Alteration</strong><br>
@@ -266,6 +314,61 @@ body {
           <button onclick="changeQty('alteration', 1)">+</button>
         </div>
       </div>
+
+    </div>
+
+
+    <!-- CUSTOMER DETAILS -->
+    <div class="order-box">
+
+      <h2>🛒 Place Your Order</h2>
+
+      <label><strong>👤 Customer Name</strong></label>
+      <input
+        type="text"
+        id="customerName"
+        class="input"
+        placeholder="Enter your name"
+      >
+
+      <label><strong>📱 Mobile Number</strong></label>
+      <input
+        type="tel"
+        id="customerMobile"
+        class="input"
+        placeholder="Enter your mobile number"
+      >
+
+      <label><strong>📝 Special Instructions</strong></label>
+      <textarea
+        id="customerNote"
+        class="input"
+        placeholder="Example: Slim fit, blue shirt, etc."
+      ></textarea>
+
+
+      <!-- ORDER SUMMARY -->
+      <div class="order-summary">
+
+        <strong>🧾 Order Summary</strong>
+
+        <div id="summary">
+          No items selected yet.
+        </div>
+
+        <div class="total">
+          Total: ₹<span id="totalAmount">0</span>
+        </div>
+
+      </div>
+
+
+      <!-- PLACE ORDER -->
+      <button
+        class="button place-order"
+        onclick="placeOrder()">
+        🟢 PLACE ORDER ON WHATSAPP
+      </button>
 
     </div>
 
@@ -331,16 +434,13 @@ body {
 
   <!-- FOOTER -->
   <div class="footer">
-
     © 2026 Vijay Tailor's<br>
     Men's Specialist
-
   </div>
 
 </div>
 
 
-<!-- QUANTITY JAVASCRIPT -->
 <script>
 
 let quantities = {
@@ -352,6 +452,27 @@ let quantities = {
   alteration: 0
 };
 
+
+let prices = {
+  shirt: 349,
+  pant: 349,
+  school: 699,
+  office: 699,
+  kurta: 699,
+  alteration: 0
+};
+
+
+let names = {
+  shirt: "Shirt Stitching",
+  pant: "Pant Stitching",
+  school: "School Uniform",
+  office: "Office Uniform",
+  kurta: "Kurta Pajama",
+  alteration: "Alteration"
+};
+
+
 function changeQty(item, amount) {
 
   quantities[item] += amount;
@@ -360,10 +481,203 @@ function changeQty(item, amount) {
     quantities[item] = 0;
   }
 
-  document.getElementById(item + "Qty").innerText = quantities[item];
+  document.getElementById(item + "Qty").innerText =
+    quantities[item];
+
+  updateSummary();
+}
+
+
+function updateSummary() {
+
+  let summary = "";
+  let total = 0;
+  let hasItems = false;
+
+  for (let item in quantities) {
+
+    if (quantities[item] > 0) {
+
+      hasItems = true;
+
+      let quantity = quantities[item];
+      let price = prices[item];
+
+      if (item === "alteration") {
+
+        summary +=
+          "<div>✂️ " +
+          names[item] +
+          " × " +
+          quantity +
+          " — Price on enquiry</div>";
+
+      } else {
+
+        let itemTotal = quantity * price;
+
+        total += itemTotal;
+
+        summary +=
+          "<div>" +
+          names[item] +
+          " × " +
+          quantity +
+          " = ₹" +
+          itemTotal +
+          "</div>";
+      }
+    }
+  }
+
+
+  if (!hasItems) {
+    summary = "No items selected yet.";
+  }
+
+  document.getElementById("summary").innerHTML = summary;
+
+  document.getElementById("totalAmount").innerText = total;
+}
+
+
+function placeOrder() {
+
+  let customerName =
+    document.getElementById("customerName").value.trim();
+
+  let customerMobile =
+    document.getElementById("customerMobile").value.trim();
+
+  let customerNote =
+    document.getElementById("customerNote").value.trim();
+
+
+  if (customerName === "") {
+
+    alert("Please enter your name.");
+
+    document.getElementById("customerName").focus();
+
+    return;
+  }
+
+
+  if (customerMobile === "") {
+
+    alert("Please enter your mobile number.");
+
+    document.getElementById("customerMobile").focus();
+
+    return;
+  }
+
+
+  let hasItems = false;
+
+  for (let item in quantities) {
+
+    if (quantities[item] > 0) {
+      hasItems = true;
+      break;
+    }
+  }
+
+
+  if (!hasItems) {
+
+    alert("Please select at least one service.");
+
+    return;
+  }
+
+
+  let message =
+    "🧵 *NEW ORDER - Vijay Tailor's*%0A%0A";
+
+
+  message +=
+    "👤 *Customer Name:* " +
+    encodeURIComponent(customerName) +
+    "%0A";
+
+
+  message +=
+    "📱 *Mobile:* " +
+    encodeURIComponent(customerMobile) +
+    "%0A%0A";
+
+
+  message +=
+    "🛒 *ORDER DETAILS*%0A";
+
+
+  let total = 0;
+
+
+  for (let item in quantities) {
+
+    if (quantities[item] > 0) {
+
+      let quantity = quantities[item];
+      let price = prices[item];
+
+
+      if (item === "alteration") {
+
+        message +=
+          "✂️ " +
+          encodeURIComponent(names[item]) +
+          " × " +
+          quantity +
+          " - Price on enquiry%0A";
+
+      } else {
+
+        let itemTotal = quantity * price;
+
+        total += itemTotal;
+
+        message +=
+          encodeURIComponent(names[item]) +
+          " × " +
+          quantity +
+          " = ₹" +
+          itemTotal +
+          "%0A";
+      }
+    }
+  }
+
+
+  message +=
+    "%0A💰 *TOTAL: ₹" +
+    total +
+    "*%0A";
+
+
+  if (customerNote !== "") {
+
+    message +=
+      "%0A📝 *Special Instructions:*%0A" +
+      encodeURIComponent(customerNote);
+  }
+
+
+  let whatsappNumber = "918830234108";
+
+
+  let whatsappURL =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    message;
+
+
+  window.open(whatsappURL, "_blank");
 }
 
 </script>
 
 </body>
-</html>
+      </html>
