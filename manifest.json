@@ -1,0 +1,17 @@
+{
+  "name": "Vijay Tailor's - Men's Specialist",
+  "short_name": "Vijay Tailor's",
+  "description": "Vijay Tailor's Men's Specialist - Wagholi, Pune",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f6f8",
+  "theme_color": "#172033",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
